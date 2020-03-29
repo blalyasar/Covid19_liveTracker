@@ -1,4 +1,0 @@
-Need to install
- # Requests
- # BeautifulSoup
- # lxml
