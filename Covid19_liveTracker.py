@@ -1,9 +1,9 @@
 import requests
 import bs4
-
-country_name=input("Enter the Country name: ")
+import argparse
 
 def covid19(country):
+    
     res = requests.get("https://www.worldometers.info/coronavirus/#countries")
     soup = bs4.BeautifulSoup(res.text, 'lxml')
     index = -1
@@ -12,7 +12,7 @@ def covid19(country):
         if data[i].text.lower()==country.lower():
             index=i
             break
-    
+
     for i in range(7):
         if i == 0:
             print("\nCountry name: "+str(data[i+index].text))
@@ -34,4 +34,18 @@ def covid19(country):
             print("Total Recovered: "+str(data[i+index].text))
         elif i == 6:
             print("Active cases: "+str(data[i+index].text),end='\n\n')
-covid19(country_name)
+        else:
+            print("This country doesn't exist")
+
+
+if __name__ == '__main__' :
+    parser = argparse. ArgumentParser(
+            description="Add CountryName")
+    
+    parser.add_argument('-c' ,
+                         help='Country Name' ,
+                         type=str,
+                         default="turkey")
+
+    args = parser.parse_args()
+    covid19(args.c)
