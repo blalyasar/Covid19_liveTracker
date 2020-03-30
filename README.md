@@ -1,5 +1,6 @@
+## Medium Blog yazısı TR
+https://medium.com/@blalyasar/python-argparse-modülü-beautifulsoup-ve-corona-verileri-c1f178f51b5c
 
-![Medium Blog yazısı](https://medium.com/@blalyasar/python-argparse-modülü-beautifulsoup-ve-corona-verileri-c1f178f51b5c)
 requirements : 
 BeautifulSıup4
 xml
